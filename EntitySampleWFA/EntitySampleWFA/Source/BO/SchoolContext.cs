@@ -8,6 +8,9 @@ namespace EntitySampleWFA.Source.BO
         internal SchoolContext()
             : base("name=SchoolContext")
         {
+            base.Database.Log = new System.Action<string>(s => {
+
+            });
         }
 
         public DbSet<Student> Students { get; set; }
